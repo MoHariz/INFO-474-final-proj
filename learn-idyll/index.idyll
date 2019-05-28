@@ -170,8 +170,7 @@ We've just taken it out of storage and *it's all out of tune...*
 [data name:"gunviolence" source:"USArrests.csv"/]
 
 [div]
-  // [Table data:`gunviolence.slice(0,10)`/]
-  [Display value:`gunviolence.slice(0,10)`/]
+  test test
 [/div]
 [/section]
 
