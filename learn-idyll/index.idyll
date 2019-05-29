@@ -98,6 +98,8 @@
 // Value of x: [Display var:`x` /].
 // Value of y: [Display var:`y` /].
 
+// [data name:"vgdata" source:"vgsales.csv"/]
+
 
 [Fixed]
   [CircleWave/]
@@ -106,10 +108,10 @@
 [section]
   [Header
     fullWidth:true
-    title:"Learn Idyll"
-    subtitle:"Welcome to Idyll. Open index.idyll to start writing"
-    author:"Your Name Here"
-    authorLink:"https://idyll-lang.org"
+    title:"Video Games"
+    subtitle:"An exploratory analysis within the video game industry"
+    author:"Muhammad Hariz, Davis Huynh, and Liuyang Fu"
+    authorLink:"https://github.com/MoHariz/INFO-474-final-proj"
     date:`(new Date()).toDateString()`
     background:"#222222"
     color:"#ffffff"
@@ -117,7 +119,7 @@
 [/section]
 
 [section]
-# A Sad Guitar.
+# 1980-1989.
 
 Take a second and strum the guitar. It doesn't sound
 so good, does it?
@@ -127,7 +129,7 @@ We've just taken it out of storage and *it's all out of tune...*
 [/section]
 
 [section]
-# A Sad Guitar.
+# 1990-1999.
 
 Take a second and strum the guitar. It doesn't sound
 so good, does it?
@@ -137,7 +139,7 @@ We've just taken it out of storage and *it's all out of tune...*
 [/section]
 
 [section]
-# A Sad Guitar.
+# 2000-2009.
 
 Take a second and strum the guitar. It doesn't sound
 so good, does it?
@@ -147,31 +149,13 @@ We've just taken it out of storage and *it's all out of tune...*
 [/section]
 
 [section]
-# A Sad Guitar.
+# 2010-2019.
 
 Take a second and strum the guitar. It doesn't sound
 so good, does it?
 
 We've just taken it out of storage and *it's all out of tune...*
 
-[/section]
-
-[section]
-# A Sad Guitar.
-
-Take a second and strum the guitar. It doesn't sound
-so good, does it?
-
-We've just taken it out of storage and *it's all out of tune...*
-
-[/section]
-
-[section]
-[data name:"gunviolence" source:"USArrests.csv"/]
-
-[div]
-  test test
-[/div]
 [/section]
 
 
