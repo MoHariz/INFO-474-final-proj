@@ -102,30 +102,29 @@
 
 
 [Fixed]
-  // [CircleWave/]
-  // [Custom slide: step/]
   
-  // [Display value: step/]
 
   [Conditional if:`step === 0`]
     [data name:"data0" source:"genre_sales_summary_1980_1989.csv"/]
-    [Chart type:"bar" data:data0 x:"Genre" y:"total_NA_sales" domain:`[0, 20]` range:`[0, 700]`/]
+    [BarChart data:data0/]
   [/Conditional]
 
   [Conditional if:`step === 1`]
     [data name:"data1" source:"genre_sales_summary_1990_1999.csv"/]
-    [Chart type:"bar" data:data1 x:"Genre" y:"total_NA_sales" domain:`[0, 20]` range:`[0, 700]`/]  
+    [BarChart data:data1/]
   [/Conditional]
 
   [Conditional if:`step === 2`]
     [data name:"data2" source:"genre_sales_summary_2000_2009.csv"/]
-    [Chart type:"bar" data:data2 x:"Genre" y:"total_NA_sales" domain:`[0, 20]` range:`[0, 700]`/] 
+    [BarChart data:data2/]
   [/Conditional]
 
   [Conditional if:`step === 3`]
     [data name:"data3" source:"genre_sales_summary_2010_2018.csv"/]
-    [Chart type:"bar" data:data3 x:"Genre" y:"total_NA_sales" domain:`[0, 20]` range:`[0, 700]`/] 
+    [BarChart data:data3/]
   [/Conditional]
+  
+  
 [/Fixed]
 
 [section]
@@ -142,47 +141,6 @@
 [/section]
 
 [var name:"step" value:0 /]
-[var name:"datasetNames" value:`["genre_sales_summary_1980_1989.csv", "genre_sales_summary_1990_1999.csv", "genre_sales_summary_2000_2009.csv", "genre_sales_summary_2010_2018.csv"]`/]
-[derived name:"current" value:`datasetNames[step]`/]
-
-[var name:"datasets" value:`[
-  [
-    {x: "ajsdhajs", y: 0.5},
-    {x: "basda", y: 5},
-    {x: "cashjsdhjsahdhsj", y: 1},
-    {x: "ddasd", y: 0.5},
-    {x: "eeeeeee", y: 0.5}
-  ],
-  [
-    {x: "ajsdhajs", y: 0.3},
-    {x: "basda", y: 7},
-    {x: "cashjsdhjsahdhsj", y: 9},
-    {x: "ddasd", y: 1},
-    {x: "eeeeeee", y: 3}
-  ],
-  [
-    {x: "ajsdhajs", y: 0.3},
-    {x: "basda", y: 0},
-    {x: "cashjsdhjsahdhsj", y: 9},
-    {x: "ddasd", y: 1},
-    {x: "eeeeeee", y: 3}
-  ],
-  [
-    {x: "ajsdhajs", y: 0.3},
-    {x: "basda", y: 10},
-    {x: "cashjsdhjsahdhsj", y: 9},
-    {x: "ddasd", y: 1},
-    {x: "eeeeeee", y: 2}
-  ]
-]` /]
-
-[var name:"dataToBeCharted" value:`[
-  {x: "ajsdhajs", y: 0.5},
-  {x: "basda", y: 5},
-  {x: "cashjsdhjsahdhsj", y: 1},
-  {x: "ddasd", y: 0.5},
-  {x: "eeeeeee", y: 0.5}
-  ]` /]
 
 [Scroller currentStep:step ]
 
