@@ -100,7 +100,9 @@
 
 // [data name:"vgdata" source:"vgsales.csv"/]
 
+[var name:"showChart" value:true /]
 
+[Conditional if:` showChart `]
 [Fixed]
   
 
@@ -131,6 +133,7 @@
   [/Conditional]
 
 [/Fixed]
+[/Conditional]
 
 [section]
   [Header
@@ -149,33 +152,129 @@
 
 [Scroller currentStep:step ]
 
-  [Step]
+  [Step onEnterViewFully: `showChart = true;`]
   # 1980-1989. [Display value:step /]
 
-  This post is testing out an integration between Idyll and Flourish. I've created a component that
-  enables authors to embed their Flourish visualizations directly in Idyll articles. The visualization you see on the right was taken directly from the Flourish documentation.
+  The emergence of video game consoles began to enter the market with many people crediting the first generation of consoles such as Atari for bringing games such as pong and pac-man to homes of many people.
+
+  In this decade where the video game industry was just in its infancy, there were only 15 main genres that we we able to pull with platform being the number one genre of them all.
+
+  Platformers however wasn't number one due it being one of the most popular genres to make in this decade, with only 208 games being made in this genre compared to action which had 574 games, but instead it was due to one of the most popular games that, to this day still call it one of the greatest of all times, Super Mario Bros.
+
+
   [/Step]
 
-  [Step]
+  [section onEnterViewFully: `showChart = false;`]
+
+  [aside]
+  [img style:`{width: '100%'}` src:"static/images/snes.jpg" /]
+  [img style:`{width: '75%'}` src:"static/images/smb.jpg" /]
+  [/aside]
+  
+
+  Created on the SNES by Nintendo, Super Mario Bros and its sequels took the market by storm with it selling 54.98 million copies in North America (Super Mario Bros., Super Mario Land, Super Mario Bros. 3, and Super Mario Bros. 2).
+
+  With the limitation of technology back then platformers such as Super Mario Bros. made the most of it. With its their 8 to 16 bit art style, simple 2-D side scrolling gameplay that made people curious of what is beyond their area/map, and its simple yet at time challenging gameplay of running and jumping, platformers were games that anyone could enjoy or appreciate. This would begin the domination of the platformer genre leading into even the next decade.
+
+
+  [/section]
+
+
+  [Step  onEnterViewFully: `showChart = true;`]
   # 1990-1999. [Display value:step /]
 
-  You can use Idyll variables to trigger some updates to the Flourish visualization. In this case, I've linked the scroll state in Idyll to the slide number in Flourish.
+   Still in a dominate fashion, the platform genre stayed number one according to sales. While some may find it surprising since some may have assumed that with technology getting better and more games entering the market (1980-1989: 2053+ games vs 1990-1999: 11400+ games), genres such as sports or racing, who struggled in sales in the previous decade due to it being hard to create immersive gameplay, would be at the top.
+
+  Instead, with the mario collection being the favorite amonst gamers, its reign of being the most bought game made platformers stay number one.
+
+  In addition to just the Mario franchise, with new consoles arriving and increasing what is possible for game creators to make. The beloved platformers were able to upgrade from its 2-D side scroller gameplay to fully 3D maps where players were able to have full range of movement making the gameplay much more fun.
+
   [/Step]
 
-  [Step]
+  [section onEnterViewFully: `showChart = false;`]
+
+  [aside]
+  [img style:`{width: '100%'}` src:"static/images/snes.jpg" /]
+  [img style:`{width: '75%'}` src:"static/images/smw.jpg" /]
+  [/aside]
+  
+
+  Just as before, the Mario franchise with its game Super Mario World on the SNES would be the number one game sold in this decade with 12.78 million copies sold in just the North Americas only with Pokemon Red/Blue being in close second with 11.27 millions copied sold.
+
+  Super Mario World, created in 1990 rode the wave with its previous games success but what I would like to highlight were the games on the N64 that allowed that three demensional gameplay that was so new and fun that made people fall in love with this genre much more.
+
+  Games like Spyro, Crash Bandicoot, Donkey Kong, and Super Mario 64 were the highlight of this decade with its beautiful graphics, huge maps that let people's imgagination and curiousity be statisfied by the ability to explore new areas, and the controls that didn't feel clunky like the first generation of 3D games had.
+
+
+  [/section]
+
+  [section onEnterViewFully: `showChart = true;`]
+  Looking back at the graph however, we can see that while platformers were number one, the sports genre has been slowly climbing up the ranks with it being the 5th most popular genre in 1980-1989, and now being the 2nd most popular genre in the market.
+
+  This would be a foreshadowing of the upcoming decade.
+  [/section]
+
+
+
+  [Step onEnterViewFully: `showChart = true;`]
   # 2000-2009. [Display value:step /]
 
-  This isn't perfect: I'm still learning about their API to see what exactly can and can't be controlled by
-  an external library like Idyll. And the responsive sizing needs work.
+   The gaming industry was not something that people could take lightly anymore. Games were being made in masses, with each of the top ten genres making well over 1000 games, and billions of games being sold globally. 
+
+  Here is where the rise of the three main consoles that people still argue which one is better till this day arrised with it being either the Xbox 360 from Microsoft or the PS3 from Sony. While the Wii from Nintendo is one of the top consoles that people buy, it fits its own niche due to its controller.
+
+  In this decade the rise of genres that were close to being the number one before finally was able to take platformers down in a dominate faction. Sports being the most popular genres, according to sales, sold well over 400 million copies over platformers and shooters selling over 345 million copies over platformers.
+
+  With the power of these new consoles, the sports, shooter, and action genres were finally able to fully show off their charm from the graphics almost looking realistic to how smooth the gameplay was, and in incorporation of online multiplayer ability that made playing games a whole new experience.
   [/Step]
 
-  [Step]
+  [section onEnterViewFully: `showChart = false;`]
+
+  [aside]
+  [img style:`{width: '100%'}` src:"static/images/wii.jpg" /]
+  [img style:`{width: '75%'}` src:"static/images/wiis.jpg" /]
+  [/aside]
+  
+  While I had previously stated that the Wii console was something that people don't consider when arguing for the best console, Wii was at the forefront of making the sport genre the most popular genre in 2000 to 2009.
+
+  Wii Sports created by Nintendo for exclusive the Wii console sold 41.49 million copies in North America with Mario Kart Wii with only 15.85 million copies sold. 
+
+  While as a whole the EA sports franchise were popular due to the reason I had stated previously, Wii sports took that experience and took it to a whole new level by making the user become the controller.
+
+  With Wii and its ability to allow the user to almost become the character in the game, games like Wii sports were able to take this fully into effect and cause almost a fully immersive experience. On top of that unlike shooters and action, sport genres are all age friendly which made its sale blow pass its other genre easily.
+
+
+  [/section]
+
+
+
+  [Step onEnterViewFully: `showChart = true;`]
   # 2010-2018. [Display value:step /]
+  Gaming and their genres seems to have stablized around being either actions or shooters. With the evolution of video game consoles and their increasing power to allow better graphics, bigger games (memory wise), and the market enjoying action packed games, platformers, which reigned as the number one genre back then, has died down and have seemed to only be made by indie developers while the huge corporations focus on franchises that have done well in sells which are either action or shooters.
 
-  However, I think this points to a path forward where specialized tools may be combined
-  to create a really nice workflow to go from data to visualization to story to publication,
-  without needing to write custom JavaScript.
+  Being in this decade where I am able to experience the popular games and hear about what games are coming out I am not really surprised with what the tops games are and action being number one. Games like Grand Theft Auto have been a major hit since the early days however with even greater graphics, bigger maps, and the fun and interactive multiplayer scene it has became the most selling game on every console.
+
   [/Step]
+
+  [section onEnterViewFully: `showChart = false;`]
+
+  While it is not shown on the data, I would like to mention however is that it seems like in this decade, PC gaming and mobile gaming has taken off and have become quite successful just because having a computer or phone is more common now but because there has been a lot of games that have been released that are free.
+
+  Games like Clash of Clans, League of Legends, Dota 2, Apex Legends, Fortnite, and many more have become very successful and continue to grow with more and more people finding it convientent that they don't have to pay to play the game.
+
+  In addition this new era of gaming, there seems to be a new genre that has taken off. While some may classify it as a shooter, the battle royale genre seems to have become its own entity with many games adding it as a game mode or making it its own exclusive game.
+
+  H1Z1, PUBG, Apex Legend, and specifically Fortnite have exploded in popularity and have made battle royales a genre that could take over action and shooters. This can all be seen by how much money these companies are making from their in-game purchases to just how many viewers streamers that are playing these games get. 
+
+  [/section]
+
+  [section]
+  #In Conclusion
+
+  While platformers was the most popular genre for two decades, with technology getting better and more and more people joining the market with a desire to play more action packed games, the shooter and action genre over took it and have become the most popular genre.
+
+  [/section]
+
 
 [/Scroller]
 
