@@ -22,17 +22,18 @@ class WhatIf extends React.PureComponent {
   render() {
     return (
       <div className="what-if">
-        <span>I am a developer who want to make a game of </span>
+        <span>If I am a developer who want to make a </span>
         <select name="genres" onChange={this.updateGenre}>
           <option value="platform">Platform</option>
           <option value="shooter">Shooter</option>
         </select>
-        <span> at </span>
+        <span> game at </span>
         <select name="platform" onChange={this.updateGenre}>
           <option value="XBOX">XBOX</option>
           <option value="PS">PlayStation</option>
           <option value="PC">PC</option>
         </select>
+        <span> platform, there's 75% of chances that I will sale:</span>
       </div>
     );
   }

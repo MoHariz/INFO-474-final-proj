@@ -104,27 +104,32 @@
 [Fixed]
   
 
-  [Conditional if:`step === 0`]
-    [data name:"data0" source:"genre_sales_summary_1980_1989.csv"/]
-    [BarChart data:data0/]
-  [/Conditional]
+  // [Conditional if:`step === 0`]
+  //   [data name:"data0" source:"genre_sales_summary_1980_1989.csv"/]
+  //   [BarChart data:data0/]
+  // [/Conditional]
 
-  [Conditional if:`step === 1`]
-    [data name:"data1" source:"genre_sales_summary_1990_1999.csv"/]
-    [BarChart data:data1/]
-  [/Conditional]
+  // [Conditional if:`step === 1`]
+  //   [data name:"data1" source:"genre_sales_summary_1990_1999.csv"/]
+  //   [BarChart data:data1/]
+  // [/Conditional]
 
-  [Conditional if:`step === 2`]
-    [data name:"data2" source:"genre_sales_summary_2000_2009.csv"/]
-    [BarChart data:data2/]
-  [/Conditional]
+  // [Conditional if:`step === 2`]
+  //   [data name:"data2" source:"genre_sales_summary_2000_2009.csv"/]
+  //   [BarChart data:data2/]
+  // [/Conditional]
 
-  [Conditional if:`step === 3`]
-    [data name:"data3" source:"genre_sales_summary_2010_2018.csv"/]
-    [BarChart data:data3/]
-  [/Conditional]
+  // [Conditional if:`step === 3`]
+  //   [data name:"data3" source:"genre_sales_summary_2010_2018.csv"/]
+  //   [BarChart data:data3/]
+  // [/Conditional]
   
-  
+
+  [Conditional if:`showWhatIf === 1`]
+
+    [BoxPlot/]
+  [/Conditional]
+
 [/Fixed]
 
 [section]
@@ -139,7 +144,7 @@
     color:"#ffffff"
     /]
 [/section]
-
+[var name:"showWhatIf" value:1 /]
 [var name:"step" value:0 /]
 
 [Scroller currentStep:step ]
@@ -172,11 +177,9 @@
   without needing to write custom JavaScript.
   [/Step]
 
-[/section]
+[/Scroller]
 
 [section]
-# 2010-2019.
-
 // [var name:"selectVal" value:"test2"/]
 // [Select value:selectVal options:`["test1", "test2"]`  /]
 // asdasdasdasd 
@@ -197,8 +200,7 @@
 
 // [Display value:x/]
 
-[/section]
-[/Scroller]
 
+[/section]
 
 

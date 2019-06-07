@@ -40,9 +40,6 @@ section {
 
 /* #idyll-mount > div > div > div > section:nth-child(2) */
 
-.what-if {
-  background-color: black;
-}
 .label {
   fill: black;
   font: 10px sans-serif;
