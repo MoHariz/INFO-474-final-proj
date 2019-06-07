@@ -151,10 +151,25 @@ We've just taken it out of storage and *it's all out of tune...*
 [section]
 # 2010-2019.
 
-Take a second and strum the guitar. It doesn't sound
-so good, does it?
+// [var name:"selectVal" value:"test2"/]
+// [Select value:selectVal options:`["test1", "test2"]`  /]
+// asdasdasdasd 
+// [Display value:selectVal/]
 
-We've just taken it out of storage and *it's all out of tune...*
+[var name:"genreName" value:"platform"/]
+
+[var name:"platformName" value:"XBOX"/]
+[WhatIf genre:genreName platform:platformName/]
+
+[Display value:genreName/]
+// [var name:"x" value: 10 /]
+// [Select value:x options:`[
+//   { value:10 , label: "value 10" }, 
+//   { value:20, label: "value 20" },
+//   { value:100, label: "value 100" },
+// ]` /]
+
+// [Display value:x/]
 
 [/section]
 
