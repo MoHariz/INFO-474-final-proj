@@ -10,6 +10,23 @@
   width : 40%;
 }
 
+.idyll-scroll {
+  margin-top: 0;
+}
+
+#idyll-scroll-0 > div > div > div:nth-child(1) {
+  margin-top: 0;
+  padding: 0;
+}
+
+.idyll-scroll-text {
+  padding-top: 0;
+}
+
+.article-header {
+  margin: 0;
+}
+
 
 @media (max-width: 1000px) {
   .idyll-step , .article-header {

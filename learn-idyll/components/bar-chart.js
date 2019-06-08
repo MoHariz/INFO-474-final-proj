@@ -24,9 +24,9 @@ class BarChart extends D3Component {
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         // for sorted barchart. comment it if not want sorted data
-        // props.data.sort(function(a, b) {
-        //     return a.total_NA_sales - b.total_NA_sales;
-        // });
+        props.data.sort(function(a, b) {
+            return a.total_NA_sales - b.total_NA_sales;
+        });
     
         var x = d3.scaleLinear()
               .range([0, width]);
