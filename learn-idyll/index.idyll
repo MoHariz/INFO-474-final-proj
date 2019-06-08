@@ -1,106 +1,9 @@
 [meta title:"Learn Idyll" description:"Short description of your project" /]
 
-// [Header
-//   fullWidth:true
-//   title:"Learn Idyll"
-//   subtitle:"Welcome to Idyll. Open index.idyll to start writing"
-//   author:"Your Name Here"
-//   authorLink:"https://idyll-lang.org"
-//   date:`(new Date()).toDateString()`
-//   background:"#222222"
-//   color:"#ffffff"
-//    /]
-
-// ## Introduction
-
-// This is an Idyll post. It is generated via
-// the file `index.idyll`. To compile this post using
-// idyll, run the command `idyll` inside of this directory.
-
-
-// Idyll posts are designed to support interaction and
-// data-driven graphics.
-
-// [var name:"state" value:0 /]
-// [CustomD3Component className:"d3-component" state:state /]
-// [button onClick:`state++`]
-//   Click Me.
-// [/button]
-
-// Configuration can be done via the `idyll` field in `package.json`.
-
-// ## Markup
-
-// Idyll is based on Markdown.
-
-// You can use familiar syntax
-// to create **bold** (`**bold**` ) and *italic* (``*italic*` ) styles,
-
-// * lists
-// * of
-// * items,
-
-// ```
-// * lists
-// * of
-// * items,
-// ```
-
-// 1. and numbered
-// 2. lists
-// 3. of items,
-
-
-// ```
-// 1. and numbered
-// 2. lists
-// 3. of items,
-// ```
-
-// in addition to [hyperlinks](https://idyll-lang.org) and images:
-
-// ![quill](static/images/quill.svg)
-
-// ```
-// ![quill](static/images/quill.svg)
-// ```
-
-// ## Components
-// Components accept properties:
-
-// ```
-// [Range value:x min:0 max:1 /]
-// ```
-
-// that can be bound to variables to achieve interactivity (more in next section).
-
-
-// A variety of components are included by default. See [all the available components](https://idyll-lang.org/docs/components/). You can also use any html tag, for example: `[div] A div! [/div]`.
-
-// To create your own, add it to the `components/` folder. There are examples of how to use Idyll with React and D3 based components already included.
-
-
-
-// ## Interactivity
-
-// Here is how you can instantiate a variable and bind it to a component:
-
-// [var name:"exampleVar" value:5 /]
-
-// [Range min:0 max:10 value:exampleVar /]
-// [Display value:exampleVar /]
-
-
-
-// [var name:"x" value:0 /]
-// [derived name:"y" value:`x`/]
-// 0 [Range value:x min:0 max:100 /] 100
-// Value of x: [Display var:`x` /].
-// Value of y: [Display var:`y` /].
 
 // [data name:"vgdata" source:"vgsales.csv"/]
 
-// [var name:"showChart" value:true /]
+[var name:"showChart" value:true /]
 
 [Fixed]
   
@@ -126,11 +29,9 @@
   [/Conditional]
   
 
-  [Conditional if:`showWhatIf === 1`]
-
-    [Display value:salesFile/]
-    [data name:"salesData" source:"genre_Platform1.csv"/]
-    // [data name:"platformData" source:"genre_Platform1.csv"/]
+  // [Conditional if:`showWhatIf === 1`]
+    [data name:"shooterData" source:"genre_Shooter1.csv"/]
+    [data name:"platformData" source:"genre_Platform1.csv"/]
     [data name:"boardData" source:"genre_Board-Game1.csv"/]
     [data name:"AAData" source:"genre_Action-Adventure1.csv"/]
     [data name:"adventureData" source:"genre_Adventure1.csv"/]
@@ -149,11 +50,72 @@
     [data name:"sportsData" source:"genre_Sports1.csv"/]
     [data name:"strategyData" source:"genre_Strategy1.csv"/]
     [data name:"VNData" source:"genre_Visual-Novel1.csv"/]
-    [BoxPlot data:salesData/]
-  [/Conditional]
+    [Conditional if:`genreName === "Action-Adventure"`]
+      [BoxPlot data:AAData/]
+    [/Conditional]
+
+    [Conditional if:`genreName === "Action"`]
+      [BoxPlot data:actionData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Adventure"`]
+      [BoxPlot data:adventureData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Board-Game"`]
+      [BoxPlot data:boardData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Education"`]
+      [BoxPlot data:educationData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Fighting"`]
+      [BoxPlot data:fightingData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Misc"`]
+      [BoxPlot data:miscData/]
+    [/Conditional]
+    [Conditional if:`genreName === "MMO"`]
+      [BoxPlot data:MMOData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Music"`]
+      [BoxPlot data:musicData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Party"`]
+      [BoxPlot data:partyData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Platform"`]
+      [BoxPlot data:platformData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Puzzle"`]
+      [BoxPlot data:puzzleData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Racing"`]
+      [BoxPlot data:racingData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Role-Playing"`]
+      [BoxPlot data:RPGData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Sandbox"`]
+      [BoxPlot data:sandBoxData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Shooter"`]
+      [BoxPlot data:shooterData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Simulation"`]
+      [BoxPlot data:simulationData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Sports"`]
+      [BoxPlot data:sportsData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Strategy"`]
+      [BoxPlot data:strategyData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Visual-Novel"`]
+      [BoxPlot data:VNData/]
+    [/Conditional]
+
+  // [/Conditional]
 
 [/Fixed]
-[/Conditional]
+
 
 [section]
   [Header
@@ -209,7 +171,6 @@
   [/Conditional]
   
   
-[/Fixed]
 
 
 
@@ -329,19 +290,79 @@
 
 [/Scroller]
 
-[var name:"med" value:0.23/]
-[var name:"max" value:40.24/]
+// [var name:"med" value:0.23/]
+// [var name:"max" value:40.24/]
 [var name:"genreName" value:"Action-Adventure"/]
+
+
 If I am a developer who want to make a 
 [Select value:genreName options:`["Action-Adventure", "Action","Adventure", 
-"Board-Game", "Education", 
+ "Education", 
 "Fighting", "Misc","MMO","Music","Party", "Platform", "Puzzle", 
 "Racing", "Role-Playing", "Sandbox", "Shooter", "Simulation", 
 "Sports", "Strategy", "Visual-Novel"]`  /]
+[Conditional if:`genreName === "Action-Adventure"`]
+  [WhatIf data:AAData/]
+[/Conditional]
+[Conditional if:`genreName === "Education"`]
+  [WhatIf data:educationData/]
+[/Conditional]
+[Conditional if:`genreName === "Adventure"`]
+  [WhatIf data:adventureData/]
+[/Conditional]
+[Conditional if:`genreName === "Action"`]
+  [WhatIf data:actionData/]
+[/Conditional]
+[Conditional if:`genreName === "Fighting"`]
+  [WhatIf data:fightingData/]
+[/Conditional]
+[Conditional if:`genreName === "Misc"`]
+  [WhatIf data:miscData/]
+[/Conditional]
+[Conditional if:`genreName === "MMO"`]
+  [WhatIf data:MMOData/]
+[/Conditional]
+[Conditional if:`genreName === "Music"`]
+  [WhatIf data:musicData/]
+[/Conditional]
+[Conditional if:`genreName === "Party"`]
+  [WhatIf data:partyData/]
+[/Conditional]
+[Conditional if:`genreName === "Platform"`]
+  [WhatIf data:platformData/]
+[/Conditional]
+[Conditional if:`genreName === "Puzzle"`]
+  [WhatIf data:puzzleData/]
+[/Conditional]
+[Conditional if:`genreName === "Racing"`]
+  [WhatIf data:racingData/]
+[/Conditional]
+[Conditional if:`genreName === "Role-Playing"`]
+  [WhatIf data:RPGData/]
+[/Conditional]
+[Conditional if:`genreName === "Sandbox"`]
+  [WhatIf data:sandBoxData/]
+[/Conditional]
+[Conditional if:`genreName === "Shooter"`]
+  [WhatIf data:shooterData/]
+[/Conditional]
+[Conditional if:`genreName === "Simulation"`]
+  [WhatIf data:simulationData/]
+[/Conditional]
+[Conditional if:`genreName === "Sports"`]
+  [WhatIf data:sportsData/]
+[/Conditional]
+[Conditional if:`genreName === "Strategy"`]
+  [WhatIf data:strategyData/]
+[/Conditional]
+[Conditional if:`genreName === "Visual-Novel"`]
+  [WhatIf data:VNData/]
+[/Conditional]
+// [Conditional if:`genreName === "Board-Game"`]
+//   [WhatIf data:boardData/]
+// [Conditional/]
 
-game, the median prediction sales will be[span className:"sales-number"][Display value:med/][/span],
-with the largest sale of 
-[span className:"sales-number"][Display value:max/][/span]
-
-
-
+// game, the median prediction sales will be[span className:"sales-number"][Display value:med/][/span],
+// with the largest sale of 
+// [span className:"sales-number"][Display value:max/][/span]
+ 
