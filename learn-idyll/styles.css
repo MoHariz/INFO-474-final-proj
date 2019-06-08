@@ -10,6 +10,27 @@
   width: 40%;
 }
 
+<<<<<<< HEAD
+=======
+.idyll-scroll {
+  margin-top: 0;
+}
+
+#idyll-scroll-0 > div > div > div:nth-child(1) {
+  margin-top: 0;
+  padding: 0;
+}
+
+.idyll-scroll-text {
+  padding-top: 0;
+}
+
+.article-header {
+  margin: 0;
+}
+
+
+>>>>>>> 62573e0fd1c6e36b415367fad3a383915f26875b
 @media (max-width: 1000px) {
   .idyll-step,
   .article-header {
