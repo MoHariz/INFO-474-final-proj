@@ -44,3 +44,8 @@ section {
   fill: black;
   font: 10px sans-serif;
 }
+
+.sales-number {
+  color: green;
+  font-weight: bold;
+}

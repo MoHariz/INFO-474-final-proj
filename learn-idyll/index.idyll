@@ -129,7 +129,28 @@
 
   [Conditional if:`showWhatIf === 1`]
 
-    [BoxPlot/]
+    [Display value:salesFile/]
+    [data name:"salesData" source:"genre_Platform1.csv"/]
+    // [data name:"platformData" source:"genre_Platform1.csv"/]
+    [data name:"boardData" source:"genre_Board-Game1.csv"/]
+    [data name:"AAData" source:"genre_Action-Adventure1.csv"/]
+    [data name:"adventureData" source:"genre_Adventure1.csv"/]
+    [data name:"fightingData" source:"genre_Fighting1.csv"/]
+    [data name:"actionData" source:"genre_Action1.csv"/]
+    [data name:"educationData" source:"genre_Education1.csv"/]
+    [data name:"miscData" source:"genre_Misc1.csv"/]
+    [data name:"MMOData" source:"genre_MMO1.csv"/]
+    [data name:"musicData" source:"genre_Music1.csv"/]
+    [data name:"partyData" source:"genre_Party1.csv"/]
+    [data name:"puzzleData" source:"genre_Puzzle1.csv"/]
+    [data name:"racingData" source:"genre_Racing1.csv"/]
+    [data name:"RPGData" source:"genre_Role-Playing1.csv"/]
+    [data name:"sandBoxData" source:"genre_Sandbox1.csv"/]
+    [data name:"simulationData" source:"genre_Simulation1.csv"/]
+    [data name:"sportsData" source:"genre_Sports1.csv"/]
+    [data name:"strategyData" source:"genre_Strategy1.csv"/]
+    [data name:"VNData" source:"genre_Visual-Novel1.csv"/]
+    [BoxPlot data:salesData/]
   [/Conditional]
 
 [/Fixed]
@@ -278,28 +299,19 @@
 
 [/Scroller]
 
-[section]
-// [var name:"selectVal" value:"test2"/]
-// [Select value:selectVal options:`["test1", "test2"]`  /]
-// asdasdasdasd 
-// [Display value:selectVal/]
+[var name:"med" value:0.23/]
+[var name:"max" value:40.24/]
+[var name:"genreName" value:"Action-Adventure"/]
+If I am a developer who want to make a 
+[Select value:genreName options:`["Action-Adventure", "Action","Adventure", 
+"Board-Game", "Education", 
+"Fighting", "Misc","MMO","Music","Party", "Platform", "Puzzle", 
+"Racing", "Role-Playing", "Sandbox", "Shooter", "Simulation", 
+"Sports", "Strategy", "Visual-Novel"]`  /]
 
-[var name:"genreName" value:"platform"/]
+game, the median prediction sales will be[span className:"sales-number"][Display value:med/][/span],
+with the largest sale of 
+[span className:"sales-number"][Display value:max/][/span]
 
-[var name:"platformName" value:"XBOX"/]
-[WhatIf genre:genreName platform:platformName/]
-
-[Display value:genreName/]
-// [var name:"x" value: 10 /]
-// [Select value:x options:`[
-//   { value:10 , label: "value 10" }, 
-//   { value:20, label: "value 20" },
-//   { value:100, label: "value 100" },
-// ]` /]
-
-// [Display value:x/]
-
-
-[/section]
 
 
