@@ -8,22 +8,22 @@
 [Fixed]
   
 
-  [Conditional if:`step === 0`]
+  [Conditional if:`step === 1`]
     [data name:"data0" source:"genre_sales_summary_1980_1989.csv"/]
     [BarChart data:data0/]
   [/Conditional]
 
-  [Conditional if:`step === 1`]
+  [Conditional if:`step === 3`]
     [data name:"data1" source:"genre_sales_summary_1990_1999.csv"/]
     [BarChart data:data1/]
   [/Conditional]
 
-  [Conditional if:`step === 2`]
+  [Conditional if:`step === 6`]
     [data name:"data2" source:"genre_sales_summary_2000_2009.csv"/]
     [BarChart data:data2/]
   [/Conditional]
 
-  [Conditional if:`step === 3`]
+  [Conditional if:`step === 8`]
     [data name:"data3" source:"genre_sales_summary_2010_2018.csv"/]
     [BarChart data:data3/]
   [/Conditional]
@@ -168,6 +168,11 @@
   [Conditional if:`step === 8`]
     [data name:"data3" source:"genre_sales_summary_2010_2018.csv"/]
     [BarChart data:data3/]
+  [/Conditional]
+
+  [Conditional if:`step === 9`]
+    [img style:`{width: '75%'}` src:"static/images/fortnite.jpg" /]
+    [img style:`{width: '75%'}` src:"static/images/lol.jpg" /]
   [/Conditional]
   
   
