@@ -5,7 +5,7 @@ const d3 = require("d3");
 class BarChart extends D3Component {
   initialize(node, props) {
     // node is a <div> container,
-    console.log(props.data);
+    // console.log(props.data);
     var margin = {
       top: 20,
       right: 20,
@@ -36,6 +36,8 @@ class BarChart extends D3Component {
     var xAxis = d3.axisBottom(x).ticks(10);
 
     var yAxis = d3.axisLeft(y);
+
+    var tooltip = d3.select(node).append("div").attr("class", "toolTip");
 
     x.domain([
       0,
@@ -82,7 +84,15 @@ class BarChart extends D3Component {
       })
       .attr("width", function(d) {
         return x(d.total_NA_sales);
-      });
+      })
+      .on("mousemove", function(d){
+        tooltip
+          .style("left", d3.event.pageX - 50 + "px")
+          .style("top", d3.event.pageY - 70 + "px")
+          .style("display", "contents")
+          .html("<p><strong>Genre:</strong> " + (d.Genre) + "<br><strong>Total sales in North America:</strong> "+ (d.total_NA_sales) + " millions</p>");
+      })
+      .on("mouseout", function(d){ tooltip.style("display", "contents");});
   }
 
   update(props) {

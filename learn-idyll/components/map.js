@@ -6,7 +6,7 @@ class Map extends D3Component {
   initialize(node, props) {
     var format = d3.format(",");
     console.log(props.population);
-    debugger;
+    //debugger;
     // Set tooltips
     // var tip = d3
     //   .tip()
