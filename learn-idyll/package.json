@@ -9,10 +9,12 @@
     "authorView": false
   },
   "dependencies": {
-    "d3": "^4.0.0",
+    "d3": "^4.13.0",
+    "d3-queue": "^3.0.7",
+    "d3-tip": "^0.9.1",
     "idyll": "^4.3.2",
     "idyll-d3-component": "^2.0.0",
-    "react-minimal-pie-chart": "^4.0.0",
+    "react-minimal-pie-chart": "^4.2.0",
     "waypoint": "^0.2.8"
   },
   "devDependencies": {
