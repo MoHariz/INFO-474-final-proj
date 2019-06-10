@@ -23,6 +23,11 @@
   padding-top: 0;
 }
 
+.noBorder {
+  border-style: none !important;
+  box-shadow: none !important;
+}
+
 .article-header {
   margin: 0;
 }

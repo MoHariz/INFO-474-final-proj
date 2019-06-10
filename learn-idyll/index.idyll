@@ -327,7 +327,7 @@
   [/Step]
 
   // step 12
-  [Step]
+  [Step className:"noBorder"]
     [Map/]
   [/Step]
 
