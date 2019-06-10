@@ -7,13 +7,27 @@
 
 [Fixed]
   
-
   [Conditional if:`step === 1`]
     [data name:"data0" source:"genre_sales_summary_1980_1989.csv"/]
     [BarChart data:data0/]
   [/Conditional]
 
+  [Conditional if:`step === 2`]
+      [img style:`{width: '50%'}` src:"static/images/snes.jpg" /]
+      [img style:`{width: '50%'}` src:"static/images/smb.jpg" /]  
+  [/Conditional]
+  
   [Conditional if:`step === 3`]
+    [data name:"data1" source:"genre_sales_summary_1990_1999.csv"/]
+    [BarChart data:data1/]
+  [/Conditional]
+
+  [Conditional if:`step === 4`]
+    [img style:`{width: '100%'}` src:"static/images/snes.jpg" /]
+    [img style:`{width: '75%'}` src:"static/images/smw.jpg" /]
+  [/Conditional]
+
+  [Conditional if:`step === 5`]
     [data name:"data1" source:"genre_sales_summary_1990_1999.csv"/]
     [BarChart data:data1/]
   [/Conditional]
@@ -23,13 +37,22 @@
     [BarChart data:data2/]
   [/Conditional]
 
+  [Conditional if:`step === 7`]
+    [img style:`{width: '75%'}` src:"static/images/wii.jpg" /]
+    [img style:`{width: '75%'}` src:"static/images/wiis.jpg" /]
+  [/Conditional]
+
   [Conditional if:`step === 8`]
     [data name:"data3" source:"genre_sales_summary_2010_2018.csv"/]
     [BarChart data:data3/]
   [/Conditional]
-  
 
-  // [Conditional if:`showWhatIf === 1`]
+  [Conditional if:`step === 9`]
+    [img style:`{width: '75%'}` src:"static/images/fortnite.jpg" /]
+    [img style:`{width: '75%'}` src:"static/images/lol.jpg" /]
+  [/Conditional]
+  
+  [Conditional if:`step === 11`]
     [data name:"shooterData" source:"genre_Shooter1.csv"/]
     [data name:"platformData" source:"genre_Platform1.csv"/]
     [data name:"boardData" source:"genre_Board-Game1.csv"/]
@@ -51,11 +74,10 @@
     [data name:"strategyData" source:"genre_Strategy1.csv"/]
     [data name:"VNData" source:"genre_Visual-Novel1.csv"/]
     // [data name:"population" source:"world_population.csv"/]
+    
     [Conditional if:`genreName === "Action-Adventure"`]
       [BoxPlot data:AAData/]
-      
     [/Conditional]
-
     [Conditional if:`genreName === "Action"`]
       [BoxPlot data:actionData/]
     [/Conditional]
@@ -113,76 +135,14 @@
     [Conditional if:`genreName === "Visual-Novel"`]
       [BoxPlot data:VNData/]
     [/Conditional]
+  [/Conditional]
 
-  // [/Conditional]
+
 
 [/Fixed]
 
 
-[section]
-  [Header
-    fullWidth:true
-    title:"Video Games"
-    subtitle:"An exploratory analysis within the video game industry"
-    author:"Muhammad Hariz, Davis Huynh, and Liuyang Fu"
-    authorLink:"https://github.com/MoHariz/INFO-474-final-proj"
-    date:`(new Date()).toDateString()`
-    background:"#222222"
-    color:"#ffffff"
-    /]
-[/section]
-[var name:"showWhatIf" value:1 /]
-  [Conditional if:`step === 1`]
-    [data name:"data0" source:"genre_sales_summary_1980_1989.csv"/]
-    [BarChart data:data0/]
-  [/Conditional]
-
-  [Conditional if:`step === 2`]
-      [img style:`{width: '50%'}` src:"static/images/snes.jpg" /]
-      [img style:`{width: '50%'}` src:"static/images/smb.jpg" /]  
-  [/Conditional]
-  
-  [Conditional if:`step === 3`]
-    [data name:"data1" source:"genre_sales_summary_1990_1999.csv"/]
-    [BarChart data:data1/]
-  [/Conditional]
-
-  [Conditional if:`step === 4`]
-    [img style:`{width: '100%'}` src:"static/images/snes.jpg" /]
-    [img style:`{width: '75%'}` src:"static/images/smw.jpg" /]
-  [/Conditional]
-
-  [Conditional if:`step === 5`]
-    [data name:"data1" source:"genre_sales_summary_1990_1999.csv"/]
-    [BarChart data:data1/]
-  [/Conditional]
-
-  [Conditional if:`step === 6`]
-    [data name:"data2" source:"genre_sales_summary_2000_2009.csv"/]
-    [BarChart data:data2/]
-  [/Conditional]
-
-  [Conditional if:`step === 7`]
-    [img style:`{width: '75%'}` src:"static/images/wii.jpg" /]
-    [img style:`{width: '75%'}` src:"static/images/wiis.jpg" /]
-  [/Conditional]
-
-  [Conditional if:`step === 8`]
-    [data name:"data3" source:"genre_sales_summary_2010_2018.csv"/]
-    [BarChart data:data3/]
-  [/Conditional]
-
-  [Conditional if:`step === 9`]
-    [img style:`{width: '75%'}` src:"static/images/fortnite.jpg" /]
-    [img style:`{width: '75%'}` src:"static/images/lol.jpg" /]
-  [/Conditional]
-  
-  
-
-
-
-[var name:"step" value:0 /]
-
+[var name:"step" value:0 /] // IMPORTANT VARIABLE!!!
 [Scroller currentStep:step ]
   [Step]
     [Header
@@ -294,79 +254,81 @@
   While platformers was the most popular genre for two decades, with technology getting better and more and more people joining the market with a desire to play more action packed games, the **shooter** and **action** genre over took it and have become the most popular genre.
   [/Step]
 
+  // step 11
+  [Step]
+  [var name:"genreName" value:"Action-Adventure"/]
+
+  If I am a developer who want to make a 
+  [Select value:genreName options:`["Action-Adventure", "Action","Adventure", 
+  "Education", 
+  "Fighting", "Misc","MMO","Music","Party", "Platform", "Puzzle", 
+  "Racing", "Role-Playing", "Sandbox", "Shooter", "Simulation", 
+  "Sports", "Strategy", "Visual-Novel"]`  /]
+  [Conditional if:`genreName === "Action-Adventure"`]
+    [WhatIf data:AAData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Education"`]
+    [WhatIf data:educationData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Adventure"`]
+    [WhatIf data:adventureData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Action"`]
+    [WhatIf data:actionData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Fighting"`]
+    [WhatIf data:fightingData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Misc"`]
+    [WhatIf data:miscData/]
+  [/Conditional]
+  [Conditional if:`genreName === "MMO"`]
+    [WhatIf data:MMOData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Music"`]
+    [WhatIf data:musicData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Party"`]
+    [WhatIf data:partyData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Platform"`]
+    [WhatIf data:platformData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Puzzle"`]
+    [WhatIf data:puzzleData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Racing"`]
+    [WhatIf data:racingData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Role-Playing"`]
+    [WhatIf data:RPGData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Sandbox"`]
+    [WhatIf data:sandBoxData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Shooter"`]
+    [WhatIf data:shooterData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Simulation"`]
+    [WhatIf data:simulationData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Sports"`]
+    [WhatIf data:sportsData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Strategy"`]
+    [WhatIf data:strategyData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Visual-Novel"`]
+    [WhatIf data:VNData/]
+  [/Conditional]
+  [Conditional if:`genreName === "Board-Game"`]
+    [WhatIf data:boardData/]
+  [/Conditional]
+  [/Step]
+
+  // step 12
+  [Step]
+    [Map/]
+  [/Step]
 
 [/Scroller]
-
-// [var name:"med" value:0.23/]
-// [var name:"max" value:40.24/]
-[var name:"genreName" value:"Action-Adventure"/]
-
-
-If I am a developer who want to make a 
-[Select value:genreName options:`["Action-Adventure", "Action","Adventure", 
- "Education", 
-"Fighting", "Misc","MMO","Music","Party", "Platform", "Puzzle", 
-"Racing", "Role-Playing", "Sandbox", "Shooter", "Simulation", 
-"Sports", "Strategy", "Visual-Novel"]`  /]
-[Conditional if:`genreName === "Action-Adventure"`]
-  [WhatIf data:AAData/]
-[/Conditional]
-[Conditional if:`genreName === "Education"`]
-  [WhatIf data:educationData/]
-[/Conditional]
-[Conditional if:`genreName === "Adventure"`]
-  [WhatIf data:adventureData/]
-[/Conditional]
-[Conditional if:`genreName === "Action"`]
-  [WhatIf data:actionData/]
-[/Conditional]
-[Conditional if:`genreName === "Fighting"`]
-  [WhatIf data:fightingData/]
-[/Conditional]
-[Conditional if:`genreName === "Misc"`]
-  [WhatIf data:miscData/]
-[/Conditional]
-[Conditional if:`genreName === "MMO"`]
-  [WhatIf data:MMOData/]
-[/Conditional]
-[Conditional if:`genreName === "Music"`]
-  [WhatIf data:musicData/]
-[/Conditional]
-[Conditional if:`genreName === "Party"`]
-  [WhatIf data:partyData/]
-[/Conditional]
-[Conditional if:`genreName === "Platform"`]
-  [WhatIf data:platformData/]
-[/Conditional]
-[Conditional if:`genreName === "Puzzle"`]
-  [WhatIf data:puzzleData/]
-[/Conditional]
-[Conditional if:`genreName === "Racing"`]
-  [WhatIf data:racingData/]
-[/Conditional]
-[Conditional if:`genreName === "Role-Playing"`]
-  [WhatIf data:RPGData/]
-[/Conditional]
-[Conditional if:`genreName === "Sandbox"`]
-  [WhatIf data:sandBoxData/]
-[/Conditional]
-[Conditional if:`genreName === "Shooter"`]
-  [WhatIf data:shooterData/]
-[/Conditional]
-[Conditional if:`genreName === "Simulation"`]
-  [WhatIf data:simulationData/]
-[/Conditional]
-[Conditional if:`genreName === "Sports"`]
-  [WhatIf data:sportsData/]
-[/Conditional]
-[Conditional if:`genreName === "Strategy"`]
-  [WhatIf data:strategyData/]
-[/Conditional]
-[Conditional if:`genreName === "Visual-Novel"`]
-  [WhatIf data:VNData/]
-[/Conditional]
-[Conditional if:`genreName === "Board-Game"`]
-  [WhatIf data:boardData/]
-[/Conditional]
-
-[Map/]
