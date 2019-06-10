@@ -71,7 +71,6 @@ class Map extends D3Component {
 
     var path = d3.geoPath().projection(projection);
 
-    var populationById = {};
     // d3.tsv("../data/world_population.tsv").then(data => {
     //   debugger;
     //   console.log("data");
@@ -81,59 +80,79 @@ class Map extends D3Component {
     //   //   debugger;
     //   console.log(data[0]);
     // });
-    d3.json("../data/world_countries.json").then(data => {
+    // d3.json("../data/world_countries.json").then(data => {
+    //   data.features.forEach(function(d) {
+    //     d.population = populationById[d.id];
+    //   });
+    // });
+    // debugger;
+    queue
+      .queue()
+      .defer(
+        d3.json,
+        "https://gist.githubusercontent.com/jeremycflin/b43ab253f3ae02dced07/raw/8e7e38b28c247610939427008451ec18463d2b8e/world_countries.json"
+      )
+      .defer(
+        d3.tsv,
+        "https://gist.githubusercontent.com/jeremycflin/b43ab253f3ae02dced07/raw/8e7e38b28c247610939427008451ec18463d2b8e/world_population.tsv"
+      )
+      .await(ready);
+    function ready(error, data, population) {
+      var populationById = {};
+
+      population.forEach(function(d) {
+        populationById[d.id] = +d.population;
+      });
       data.features.forEach(function(d) {
         d.population = populationById[d.id];
       });
-    });
-    debugger;
 
-    svg
-      .append("g")
-      .attr("class", "countries")
-      .selectAll("path")
-      .data(data.features)
-      .enter()
-      .append("path")
-      .attr("d", path)
-      .style("fill", function(d) {
-        return color(populationById[d.id]);
-      })
-      .style("stroke", "white")
-      .style("stroke-width", 1.5)
-      .style("opacity", 0.8)
-      // tooltips
-      .style("stroke", "white")
-      .style("stroke-width", 0.3);
-    // .on("mouseover", function(d) {
-    //   tip.show(d);
-
-    //   d3.select(this)
-    //     .style("opacity", 1)
-    //     .style("stroke", "white")
-    //     .style("stroke-width", 3);
-    // })
-    // .on("mouseout", function(d) {
-    //   tip.hide(d);
-
-    //   d3.select(this)
-    //     .style("opacity", 0.8)
-    //     .style("stroke", "white")
-    //     .style("stroke-width", 0.3);
-    // });
-
-    svg
-      .append("path")
-      .datum(
-        topojson.mesh(data.features, function(a, b) {
-          return a.id !== b.id;
+      svg
+        .append("g")
+        .attr("class", "countries")
+        .selectAll("path")
+        .data(data.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .style("fill", function(d) {
+          return color(populationById[d.id]);
         })
-      )
-      // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
-      .attr("class", "names")
-      .attr("d", path);
+        .style("stroke", "white")
+        .style("stroke-width", 1.5)
+        .style("opacity", 0.8)
+        // tooltips
+        .style("stroke", "white")
+        .style("stroke-width", 0.3);
+      // .on("mouseover", function(d) {
+      //   tip.show(d);
+
+      //   d3.select(this)
+      //     .style("opacity", 1)
+      //     .style("stroke", "white")
+      //     .style("stroke-width", 3);
+      // })
+      // .on("mouseout", function(d) {
+      //   tip.hide(d);
+
+      //   d3.select(this)
+      //     .style("opacity", 0.8)
+      //     .style("stroke", "white")
+      //     .style("stroke-width", 0.3);
+      // });
+
+      svg
+        .append("path")
+        .datum(
+          topojson.mesh(data.features, function(a, b) {
+            return a.id !== b.id;
+          })
+        )
+        // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+        .attr("class", "names")
+        .attr("d", path);
+    }
   }
-  //   }
 }
 
 module.exports = Map;

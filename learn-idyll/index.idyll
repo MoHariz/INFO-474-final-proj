@@ -50,69 +50,69 @@
     [data name:"sportsData" source:"genre_Sports1.csv"/]
     [data name:"strategyData" source:"genre_Strategy1.csv"/]
     [data name:"VNData" source:"genre_Visual-Novel1.csv"/]
-    [data name:"population" source:"world_population.csv"/]
-    // [Conditional if:`genreName === "Action-Adventure"`]
-    //   [BoxPlot data:AAData/]
+    // [data name:"population" source:"world_population.csv"/]
+    [Conditional if:`genreName === "Action-Adventure"`]
+      [BoxPlot data:AAData/]
       
-    // [/Conditional]
+    [/Conditional]
 
-    // [Conditional if:`genreName === "Action"`]
-    //   [BoxPlot data:actionData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Adventure"`]
-    //   [BoxPlot data:adventureData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Board-Game"`]
-    //   [BoxPlot data:boardData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Education"`]
-    //   [BoxPlot data:educationData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Fighting"`]
-    //   [BoxPlot data:fightingData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Misc"`]
-    //   [BoxPlot data:miscData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "MMO"`]
-    //   [BoxPlot data:MMOData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Music"`]
-    //   [BoxPlot data:musicData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Party"`]
-    //   [BoxPlot data:partyData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Platform"`]
-    //   [BoxPlot data:platformData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Puzzle"`]
-    //   [BoxPlot data:puzzleData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Racing"`]
-    //   [BoxPlot data:racingData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Role-Playing"`]
-    //   [BoxPlot data:RPGData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Sandbox"`]
-    //   [BoxPlot data:sandBoxData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Shooter"`]
-    //   [BoxPlot data:shooterData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Simulation"`]
-    //   [BoxPlot data:simulationData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Sports"`]
-    //   [BoxPlot data:sportsData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Strategy"`]
-    //   [BoxPlot data:strategyData/]
-    // [/Conditional]
-    // [Conditional if:`genreName === "Visual-Novel"`]
-    //   [BoxPlot data:VNData/]
-    // [/Conditional]
+    [Conditional if:`genreName === "Action"`]
+      [BoxPlot data:actionData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Adventure"`]
+      [BoxPlot data:adventureData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Board-Game"`]
+      [BoxPlot data:boardData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Education"`]
+      [BoxPlot data:educationData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Fighting"`]
+      [BoxPlot data:fightingData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Misc"`]
+      [BoxPlot data:miscData/]
+    [/Conditional]
+    [Conditional if:`genreName === "MMO"`]
+      [BoxPlot data:MMOData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Music"`]
+      [BoxPlot data:musicData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Party"`]
+      [BoxPlot data:partyData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Platform"`]
+      [BoxPlot data:platformData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Puzzle"`]
+      [BoxPlot data:puzzleData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Racing"`]
+      [BoxPlot data:racingData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Role-Playing"`]
+      [BoxPlot data:RPGData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Sandbox"`]
+      [BoxPlot data:sandBoxData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Shooter"`]
+      [BoxPlot data:shooterData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Simulation"`]
+      [BoxPlot data:simulationData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Sports"`]
+      [BoxPlot data:sportsData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Strategy"`]
+      [BoxPlot data:strategyData/]
+    [/Conditional]
+    [Conditional if:`genreName === "Visual-Novel"`]
+      [BoxPlot data:VNData/]
+    [/Conditional]
 
   // [/Conditional]
 
@@ -181,195 +181,192 @@
 
 
 
-// [var name:"step" value:0 /]
+[var name:"step" value:0 /]
 
-// [Scroller currentStep:step ]
-//   [Step]
-//     [Header
-//       fullWidth:true
-//       title:"Video Games"
-//       subtitle:"An exploratory analysis within the video game industry"
-//       author:"Muhammad Hariz, Davis Huynh, and Liuyang Fu"
-//       authorLink:"https://github.com/MoHariz/INFO-474-final-proj"
-//       date:`(new Date()).toDateString()`
-//       background:"#222222"
-//       color:"#ffffff"
-//       /]
-//   [/Step]
+[Scroller currentStep:step ]
+  [Step]
+    [Header
+      fullWidth:true
+      title:"Video Games"
+      subtitle:"An exploratory analysis within the video game industry"
+      author:"Muhammad Hariz, Davis Huynh, and Liuyang Fu"
+      authorLink:"https://github.com/MoHariz/INFO-474-final-proj"
+      date:`(new Date()).toDateString()`
+      background:"#222222"
+      color:"#ffffff"
+      /]
+  [/Step]
 
-//   // step 1
-//   [Step onEnterViewFully: `showChart = true;`]
-//   # 1980-1989.
+  // step 1
+  [Step onEnterViewFully: `showChart = true;`]
+  # 1980-1989.
 
-//   The emergence of video game consoles began to enter the market with many people crediting the first generation of consoles such as Atari for bringing games such as pong and pac-man to homes of many people.
+  The emergence of video game consoles began to enter the market with many people crediting the first generation of consoles such as Atari for bringing games such as pong and pac-man to homes of many people.
 
-//   In this decade where the video game industry was just in its infancy, there were only **15** main genres that we we able to pull with platform being the number one genre of them all.
+  In this decade where the video game industry was just in its infancy, there were only **15** main genres that we we able to pull with platform being the number one genre of them all.
 
-//   Platformers however wasn't number one due it being one of the most popular genres to make in this decade, with only **208** games being made in this genre compared to action which had **574** games, but instead it was due to one of the most popular games that, to this day still call it one of the greatest of all times, **Super Mario Bros**.
-//   [/Step]
+  Platformers however wasn't number one due it being one of the most popular genres to make in this decade, with only **208** games being made in this genre compared to action which had **574** games, but instead it was due to one of the most popular games that, to this day still call it one of the greatest of all times, **Super Mario Bros**.
+  [/Step]
 
-//   // step 2
-//   [Step onEnterViewFully: `showChart = false;`]
+  // step 2
+  [Step onEnterViewFully: `showChart = false;`]
 
-//   Created on the SNES by Nintendo, **Super Mario Bros** and its sequels took the market by storm with it selling **54.98** million copies in North America (Super Mario Bros., Super Mario Land, Super Mario Bros. 3, and Super Mario Bros. 2).
+  Created on the SNES by Nintendo, **Super Mario Bros** and its sequels took the market by storm with it selling **54.98** million copies in North America (Super Mario Bros., Super Mario Land, Super Mario Bros. 3, and Super Mario Bros. 2).
 
-//   With the limitation of technology back then, platformers such as Super Mario Bros made the most of it. With their 8 to 16 bit art style, simple 2-D side scrolling gameplay that made people curious of what is beyond their area/map, and its simple yet challenging gameplay of running and jumping, platformers were games that anyone could enjoy or appreciate. This would begin the domination of the platformer genre leading into the next decade.
-//   [/Step]
+  With the limitation of technology back then, platformers such as Super Mario Bros made the most of it. With their 8 to 16 bit art style, simple 2-D side scrolling gameplay that made people curious of what is beyond their area/map, and its simple yet challenging gameplay of running and jumping, platformers were games that anyone could enjoy or appreciate. This would begin the domination of the platformer genre leading into the next decade.
+  [/Step]
 
-//   // step 3
-//   [Step  onEnterViewFully: `showChart = true;`]
-//   # 1990-1999.
+  // step 3
+  [Step  onEnterViewFully: `showChart = true;`]
+  # 1990-1999.
 
-//   Still in a dominate fashion, the **platform** genre stayed number one according to its sales in North America. While some may find it surprising since some may have assumed that with the technology getting better and more games entering the market (1980-1989: 2053+ games vs 1990-1999: 11400+ games), genres such as **sports** and **racing**, which struggled in sales in the previous decade due to it being hard to create immersive gameplay, would be at the top.
+  Still in a dominate fashion, the **platform** genre stayed number one according to its sales in North America. While some may find it surprising since some may have assumed that with the technology getting better and more games entering the market (1980-1989: 2053+ games vs 1990-1999: 11400+ games), genres such as **sports** and **racing**, which struggled in sales in the previous decade due to it being hard to create immersive gameplay, would be at the top.
 
-//   Instead, with the Mario collection being the favorite amongst gamers, its reign of being the most bought game made platformers stay number one.
+  Instead, with the Mario collection being the favorite amongst gamers, its reign of being the most bought game made platformers stay number one.
 
-//   In addition to just the Mario franchise, with new consoles arriving and increasing what is possible for game creators to make. The beloved platformers were able to upgrade from its 2-D side scroller gameplay to fully 3D maps where players were able to have full range of movement making the gameplay much more fun.
-//   [/Step]
+  In addition to just the Mario franchise, with new consoles arriving and increasing what is possible for game creators to make. The beloved platformers were able to upgrade from its 2-D side scroller gameplay to fully 3D maps where players were able to have full range of movement making the gameplay much more fun.
+  [/Step]
 
-//   // step 4
-//   [Step onEnterViewFully: `showChart = false;`]
-//   Just as before, the Mario franchise with its game **Super Mario World** on the SNES would be the number one game sold in this decade with **12.78** million copies sold in just the North Americas only with **Pokemon Red/Blue** being in close second with **11.27** millions copied sold.
+  // step 4
+  [Step onEnterViewFully: `showChart = false;`]
+  Just as before, the Mario franchise with its game **Super Mario World** on the SNES would be the number one game sold in this decade with **12.78** million copies sold in just the North Americas only with **Pokemon Red/Blue** being in close second with **11.27** millions copied sold.
 
-//   **Super Mario World**, created in 1990 rode the wave with its previous games success but what we would like to highlight were the games on the N64 that allowed that three demensional gameplay that was so new and fun that made people fall in love with this genre much more.
+  **Super Mario World**, created in 1990 rode the wave with its previous games success but what we would like to highlight were the games on the N64 that allowed that three demensional gameplay that was so new and fun that made people fall in love with this genre much more.
 
-//   Games like **Spyro**, **Crash Bandicoot**, **Donkey Kong**, and **Super Mario 64** were the highlights of this decade with its beautiful graphics, huge maps that let people's imgagination and curiousity be statisfied by the ability to explore new areas, and the controls that didn't feel clunky like the first generation of 3D games had.
-//   [/Step]
+  Games like **Spyro**, **Crash Bandicoot**, **Donkey Kong**, and **Super Mario 64** were the highlights of this decade with its beautiful graphics, huge maps that let people's imgagination and curiousity be statisfied by the ability to explore new areas, and the controls that didn't feel clunky like the first generation of 3D games had.
+  [/Step]
 
-//   // step 5
-//   [Step onEnterViewFully: `showChart = true;`]
-//   Looking back at the graph however, we can see that while platformers were number one, the **sports** genre has been slowly climbing up the ranks with it being the 5th most popular genre in 1980-1989, and now being the 2nd most popular genre in the market.
+  // step 5
+  [Step onEnterViewFully: `showChart = true;`]
+  Looking back at the graph however, we can see that while platformers were number one, the **sports** genre has been slowly climbing up the ranks with it being the 5th most popular genre in 1980-1989, and now being the 2nd most popular genre in the market.
 
-//   This would be a foreshadowing of the upcoming decade.
-//   [/Step]
+  This would be a foreshadowing of the upcoming decade.
+  [/Step]
 
-//   // step 6
-//   [Step onEnterViewFully: `showChart = true;`]
-//   # 2000-2009. 
+  // step 6
+  [Step onEnterViewFully: `showChart = true;`]
+  # 2000-2009. 
 
-//   The gaming industry was not something that people could take lightly anymore. Games were being made in masses, with each of the top ten genres making well over 1000 games, and billions of games being sold globally. 
+  The gaming industry was not something that people could take lightly anymore. Games were being made in masses, with each of the top ten genres making well over 1000 games, and billions of games being sold globally. 
 
-//   Here is where the rise of the three main consoles that people still argue which one is better till this day arrised with it being either the Xbox 360 from Microsoft or the PS3 from Sony. While the Wii from Nintendo is one of the top consoles that people buy, it fits its own niche due to its controller.
+  Here is where the rise of the three main consoles that people still argue which one is better till this day arrised with it being either the Xbox 360 from Microsoft or the PS3 from Sony. While the Wii from Nintendo is one of the top consoles that people buy, it fits its own niche due to its controller.
 
-//   In this decade the rise of genres that were close to being the number one before finally was able to take platformers down in a dominate faction. **Sports** being the most popular genres, according to sales, sold well over **400** million copies over platformers and **shooters** selling over **345** million copies over platformers.
+  In this decade the rise of genres that were close to being the number one before finally was able to take platformers down in a dominate faction. **Sports** being the most popular genres, according to sales, sold well over **400** million copies over platformers and **shooters** selling over **345** million copies over platformers.
 
-//   With the power of these new consoles, the **sports**, **shooter**, and **action** genres were finally able to fully show off their charm from the graphics almost looking realistic to how smooth the gameplay was, and in incorporation of online multiplayer ability that made playing games a whole new experience.
-//   [/Step]
+  With the power of these new consoles, the **sports**, **shooter**, and **action** genres were finally able to fully show off their charm from the graphics almost looking realistic to how smooth the gameplay was, and in incorporation of online multiplayer ability that made playing games a whole new experience.
+  [/Step]
 
-//   // step 7
-//   [Step onEnterViewFully: `showChart = false;`]
-//   While we had previously stated that the Wii console was something that people don't consider when arguing for the best console, Wii was at the forefront of making the sport genre the most popular genre in 2000 to 2009.
+  // step 7
+  [Step onEnterViewFully: `showChart = false;`]
+  While we had previously stated that the Wii console was something that people don't consider when arguing for the best console, Wii was at the forefront of making the sport genre the most popular genre in 2000 to 2009.
 
-//   **Wii Sports** created by Nintendo for exclusive the Wii console sold **41.49** million copies in North America with **Mario Kart Wii** being the second most sold game with **15.85** million copies sold in North America. 
+  **Wii Sports** created by Nintendo for exclusive the Wii console sold **41.49** million copies in North America with **Mario Kart Wii** being the second most sold game with **15.85** million copies sold in North America. 
 
-//   While as a whole the EA sports franchise were popular due to the reason we had stated previously, **Wii sports** took that experience and took it to a whole new level by making the user become the controller.
+  While as a whole the EA sports franchise were popular due to the reason we had stated previously, **Wii sports** took that experience and took it to a whole new level by making the user become the controller.
 
-//   With Wii and its ability to allow the user to almost become the character in the game, games like **Wii sports** were able to take this fully into effect and cause almost a fully immersive experience. On top of that unlike **shooters** and **action**, **sport** genres are all age friendly which made its sale blow pass its other genre easily.
-//   [/Step]
+  With Wii and its ability to allow the user to almost become the character in the game, games like **Wii sports** were able to take this fully into effect and cause almost a fully immersive experience. On top of that unlike **shooters** and **action**, **sport** genres are all age friendly which made its sale blow pass its other genre easily.
+  [/Step]
 
-//   // step 8
-//   [Step onEnterViewFully: `showChart = true;`]
-//   # 2010-2018. 
+  // step 8
+  [Step onEnterViewFully: `showChart = true;`]
+  # 2010-2018. 
 
-//   Gaming and their genres seems to have stablized around being either actions or shooters. With the evolution of video game consoles and their increasing power to allow better graphics, bigger games (memory wise), and the market enjoying action packed games, platformers, which reigned as the number one genre back then, has died down and have seemed to only be made by indie developers while the huge corporations focus on franchises that have done well in sells which are either action or shooters.
+  Gaming and their genres seems to have stablized around being either actions or shooters. With the evolution of video game consoles and their increasing power to allow better graphics, bigger games (memory wise), and the market enjoying action packed games, platformers, which reigned as the number one genre back then, has died down and have seemed to only be made by indie developers while the huge corporations focus on franchises that have done well in sells which are either action or shooters.
 
-//   Being in this decade where we are able to experience the popular games and hear about what games are coming out, we are not really surprised with what the tops games are and action being number one. Games like **the Grand Theft Auto collection** have been a major hit since the early days. However, with even greater graphics, bigger maps, and the fun and interactive multiplayer scene, it has became the most selling game on every console.
-//   [/Step]
+  Being in this decade where we are able to experience the popular games and hear about what games are coming out, we are not really surprised with what the tops games are and action being number one. Games like **the Grand Theft Auto collection** have been a major hit since the early days. However, with even greater graphics, bigger maps, and the fun and interactive multiplayer scene, it has became the most selling game on every console.
+  [/Step]
 
-//   // step 9
-//   [Step onEnterViewFully: `showChart = false;`]
-//   While it is not shown on the data, we would like to mention that in this decade, PC gaming and mobile gaming has taken off and have become quite successful not just because having a computer or smartphone is more common now, but because there has been a lot of free games that have been released for these platforms.
+  // step 9
+  [Step onEnterViewFully: `showChart = false;`]
+  While it is not shown on the data, we would like to mention that in this decade, PC gaming and mobile gaming has taken off and have become quite successful not just because having a computer or smartphone is more common now, but because there has been a lot of free games that have been released for these platforms.
 
-//   Games like **Clash of Clans**, **League of Legends**, **Dota 2**, **Apex Legends**, **Fortnite**, and many more have become very successful and continue to grow with more and more people finding it convientent that they don't have to pay to play video games.
+  Games like **Clash of Clans**, **League of Legends**, **Dota 2**, **Apex Legends**, **Fortnite**, and many more have become very successful and continue to grow with more and more people finding it convientent that they don't have to pay to play video games.
 
-//   In addition this new era of gaming, there seems to be a new genre that has taken off. While some may classify it as a shooter, the battle royale genre seems to have become its own entity with many games adding it as a game mode or making it its own exclusive game.
+  In addition this new era of gaming, there seems to be a new genre that has taken off. While some may classify it as a shooter, the battle royale genre seems to have become its own entity with many games adding it as a game mode or making it its own exclusive game.
 
-//   **H1Z1**, **PUBG**, **Apex Legend**, and specifically **Fortnite** have exploded in popularity and have made battle royales a genre that could take over action and shooters. This can all be seen by how much money these companies are making from their in-game purchases to just how many viewers streamers that are playing these games get. 
-//   [/Step]
+  **H1Z1**, **PUBG**, **Apex Legend**, and specifically **Fortnite** have exploded in popularity and have made battle royales a genre that could take over action and shooters. This can all be seen by how much money these companies are making from their in-game purchases to just how many viewers streamers that are playing these games get. 
+  [/Step]
 
-//   // step 10
-//   [Step]
-//   #In Conclusion
+  // step 10
+  [Step]
+  #In Conclusion
 
-//   While platformers was the most popular genre for two decades, with technology getting better and more and more people joining the market with a desire to play more action packed games, the **shooter** and **action** genre over took it and have become the most popular genre.
-//   [/Step]
+  While platformers was the most popular genre for two decades, with technology getting better and more and more people joining the market with a desire to play more action packed games, the **shooter** and **action** genre over took it and have become the most popular genre.
+  [/Step]
 
 
-// [/Scroller]
+[/Scroller]
 
-// // [var name:"med" value:0.23/]
-// // [var name:"max" value:40.24/]
+// [var name:"med" value:0.23/]
+// [var name:"max" value:40.24/]
 [var name:"genreName" value:"Action-Adventure"/]
 
 
-// If I am a developer who want to make a 
-// [Select value:genreName options:`["Action-Adventure", "Action","Adventure", 
-//  "Education", 
-// "Fighting", "Misc","MMO","Music","Party", "Platform", "Puzzle", 
-// "Racing", "Role-Playing", "Sandbox", "Shooter", "Simulation", 
-// "Sports", "Strategy", "Visual-Novel"]`  /]
+If I am a developer who want to make a 
+[Select value:genreName options:`["Action-Adventure", "Action","Adventure", 
+ "Education", 
+"Fighting", "Misc","MMO","Music","Party", "Platform", "Puzzle", 
+"Racing", "Role-Playing", "Sandbox", "Shooter", "Simulation", 
+"Sports", "Strategy", "Visual-Novel"]`  /]
 [Conditional if:`genreName === "Action-Adventure"`]
   [WhatIf data:AAData/]
 [/Conditional]
-// [Conditional if:`genreName === "Education"`]
-//   [WhatIf data:educationData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Adventure"`]
-//   [WhatIf data:adventureData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Action"`]
-//   [WhatIf data:actionData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Fighting"`]
-//   [WhatIf data:fightingData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Misc"`]
-//   [WhatIf data:miscData/]
-// [/Conditional]
-// [Conditional if:`genreName === "MMO"`]
-//   [WhatIf data:MMOData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Music"`]
-//   [WhatIf data:musicData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Party"`]
-//   [WhatIf data:partyData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Platform"`]
-//   [WhatIf data:platformData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Puzzle"`]
-//   [WhatIf data:puzzleData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Racing"`]
-//   [WhatIf data:racingData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Role-Playing"`]
-//   [WhatIf data:RPGData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Sandbox"`]
-//   [WhatIf data:sandBoxData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Shooter"`]
-//   [WhatIf data:shooterData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Simulation"`]
-//   [WhatIf data:simulationData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Sports"`]
-//   [WhatIf data:sportsData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Strategy"`]
-//   [WhatIf data:strategyData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Visual-Novel"`]
-//   [WhatIf data:VNData/]
-// [/Conditional]
-// [Conditional if:`genreName === "Board-Game"`]
-//   [WhatIf data:boardData/]
-// [Conditional/]
+[Conditional if:`genreName === "Education"`]
+  [WhatIf data:educationData/]
+[/Conditional]
+[Conditional if:`genreName === "Adventure"`]
+  [WhatIf data:adventureData/]
+[/Conditional]
+[Conditional if:`genreName === "Action"`]
+  [WhatIf data:actionData/]
+[/Conditional]
+[Conditional if:`genreName === "Fighting"`]
+  [WhatIf data:fightingData/]
+[/Conditional]
+[Conditional if:`genreName === "Misc"`]
+  [WhatIf data:miscData/]
+[/Conditional]
+[Conditional if:`genreName === "MMO"`]
+  [WhatIf data:MMOData/]
+[/Conditional]
+[Conditional if:`genreName === "Music"`]
+  [WhatIf data:musicData/]
+[/Conditional]
+[Conditional if:`genreName === "Party"`]
+  [WhatIf data:partyData/]
+[/Conditional]
+[Conditional if:`genreName === "Platform"`]
+  [WhatIf data:platformData/]
+[/Conditional]
+[Conditional if:`genreName === "Puzzle"`]
+  [WhatIf data:puzzleData/]
+[/Conditional]
+[Conditional if:`genreName === "Racing"`]
+  [WhatIf data:racingData/]
+[/Conditional]
+[Conditional if:`genreName === "Role-Playing"`]
+  [WhatIf data:RPGData/]
+[/Conditional]
+[Conditional if:`genreName === "Sandbox"`]
+  [WhatIf data:sandBoxData/]
+[/Conditional]
+[Conditional if:`genreName === "Shooter"`]
+  [WhatIf data:shooterData/]
+[/Conditional]
+[Conditional if:`genreName === "Simulation"`]
+  [WhatIf data:simulationData/]
+[/Conditional]
+[Conditional if:`genreName === "Sports"`]
+  [WhatIf data:sportsData/]
+[/Conditional]
+[Conditional if:`genreName === "Strategy"`]
+  [WhatIf data:strategyData/]
+[/Conditional]
+[Conditional if:`genreName === "Visual-Novel"`]
+  [WhatIf data:VNData/]
+[/Conditional]
+[Conditional if:`genreName === "Board-Game"`]
+  [WhatIf data:boardData/]
+[/Conditional]
 
-// game, the median prediction sales will be[span className:"sales-number"][Display value:med/][/span],
-// with the largest sale of 
-// [span className:"sales-number"][Display value:max/][/span]
- [Map population:population/]
+[Map/]
