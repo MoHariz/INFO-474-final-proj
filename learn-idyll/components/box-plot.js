@@ -32,25 +32,28 @@ class BoxPlot extends D3Component {
     const median = d3.median(sortedData);
     // console.log(median);
 
-    const firstQuartile = d3.quantile(sortedData, 0.25);
+    let firstQuartile = d3.quantile(sortedData, 0.25);
+    firstQuartile = Math.round(firstQuartile * 100) / 100;
     // console.log(firstQuartile);
-    const thirdQuartile = d3.quantile(sortedData, 0.75);
+    let thirdQuartile = d3.quantile(sortedData, 0.75);
+    thirdQuartile = Math.round(thirdQuartile * 100) / 100;
     // console.log(thirdQuartile);
 
     const interQuartileRange = thirdQuartile - firstQuartile;
     // console.log(interQuartileRange);
 
     const minAbsolute = d3.min(sortedData);
-    const minIQR = firstQuartile - interQuartileRange * 1.5;
-
-    const min = minIQR > minAbsolute ? minIQR : minAbsolute;
+    let minIQR = firstQuartile - interQuartileRange * 1.5;
+    minIQR = Math.round(minIQR * 100) / 100;
+    let min = minIQR > minAbsolute ? minIQR : minAbsolute;
+    min = Math.round(min * 100) / 100;
 
     const maxAbsolute = d3.max(sortedData);
 
-    const maxIQR = thirdQuartile + interQuartileRange * 1.5;
-
-    const max = maxIQR < maxAbsolute ? maxIQR : maxAbsolute;
-
+    let maxIQR = thirdQuartile + interQuartileRange * 1.5;
+    maxIQR = Math.round(maxIQR * 100) / 100;
+    let max = maxIQR < maxAbsolute ? maxIQR : maxAbsolute;
+    max = Math.round(max * 100) / 100;
     const margin = {
       top: 20,
       right: 20,
