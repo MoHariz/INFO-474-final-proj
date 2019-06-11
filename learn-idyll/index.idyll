@@ -137,7 +137,9 @@
     [/Conditional]
   [/Conditional]
 
-
+  [Conditional if:`step === 12`]
+    [Map/]
+  [/Conditional]
 
 [/Fixed]
 
@@ -148,7 +150,7 @@
     [Header
       fullWidth:true
       title:"Video Games"
-      subtitle:"An exploratory analysis within the video game industry"
+      subtitle:"The Rise and Fall of Video Game Genres"
       author:"Muhammad Hariz, Davis Huynh, and Liuyang Fu"
       authorLink:"https://github.com/MoHariz/INFO-474-final-proj"
       date:`(new Date()).toDateString()`
@@ -328,7 +330,7 @@
 
   // step 12
   [Step]
-    [Map/]
+  include dropdowns and text for map here
   [/Step]
 
 [/Scroller]
