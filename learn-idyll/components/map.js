@@ -80,7 +80,7 @@ class Map extends D3Component {
           "<br></span>" +
           "<strong>Total Sales: </strong><span class='details'>" +
           format(d.sales) +
-          "million copies</span>"
+          " million copies</span>"
         );
       });
 
@@ -161,8 +161,6 @@ class Map extends D3Component {
       //   )
       .await(ready);
     function ready(error, data) {
-      //   var salesByRegion = { USA: 310232863 };
-      //   var populationById = {};
       var salesByRegion = {};
       data.features.forEach(function(d) {
         if (NA_REGION.includes(d.id)) {
@@ -179,30 +177,7 @@ class Map extends D3Component {
           d.region = "JPN";
         }
       });
-      debugger;
-      //   for (let i = 0; i < NA_REGION.length; i++) {
-      //     salesByRegion[NA_REGION[i]] = salesData.total_NA_sales;
-      //     data.features[NA_REGION[i]] = salesData.total_NA_sales;
-      //   }
-      //   for (let i = 0; i < EU_REGION.length; i++) {
-      //     salesByRegion[EU_REGION[i]] = salesData.total_EU_sales;
-      //     data.features[EU_REGION[i]] = salesData.total_EU_sales;
-      //   }
 
-      //   salesByRegion.JPN = salesData.total_JP_sales;
-      //   data.features.JPN = salesData.total_JP_sales;
-      //   debugger;
-
-      //   population.forEach(function(d) {
-      //     populationById[d.id] = +d.population;
-      //   });
-      //   data.features.forEach(function(d) {
-      //     d.population = populationById[d.id];
-      //   });
-      //   debugger;
-      //   console.log(props.country);
-
-      //   debugger;
       svg
         .append("g")
         .attr("class", "countries")
