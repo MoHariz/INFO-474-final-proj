@@ -60,7 +60,6 @@ section {
   fill: brown;
 }
 
-
 .label {
   fill: black;
   font: 10px sans-serif;
@@ -70,7 +69,6 @@ section {
   color: green;
   font-weight: bold;
 }
-<<<<<<< HEAD
 .names {
   fill: none;
   stroke: #fff;
@@ -142,7 +140,6 @@ section {
 .details {
   color: white;
 }
-=======
 
 .toolTip {
   position: absolute;
@@ -150,8 +147,7 @@ section {
   min-width: 80px;
   height: auto;
   background: none repeat scroll 0 0 #ffffff;
-  border: 1px solid #6F257F;
+  border: 1px solid #6f257f;
   padding: 14px;
   text-align: left;
 }
->>>>>>> e39ada7a1e1ec173466d54aa43101cfabef9f7e4
