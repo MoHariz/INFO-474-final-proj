@@ -85,7 +85,7 @@ class Map extends D3Component {
       });
 
     var margin = { top: 0, right: 0, bottom: 0, left: 0 },
-      width = 960 - margin.left - margin.right,
+      width = 900 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
 
     var color = d3
@@ -129,7 +129,7 @@ class Map extends D3Component {
     var projection = d3
       .geoMercator()
       .scale(130)
-      .translate([width / 2, height / 1.5]);
+      .translate([width / 4, height / 3]);
 
     var path = d3.geoPath().projection(projection);
     svg.call(tip);
@@ -187,6 +187,7 @@ class Map extends D3Component {
         .append("path")
         .attr("d", path)
         .style("fill", function(d) {
+<<<<<<< HEAD
           //   console.log(d.id);
           //   debugger;
           if (!isNaN(salesByRegion[d.id])) {
@@ -200,6 +201,10 @@ class Map extends D3Component {
           } else {
             return "rgba(255,255,255,0)";
           }
+=======
+          console.log(d)
+          return color(populationById[d.id]);
+>>>>>>> 71bbd3b4b6da710ebb53f3a83a61bd94eda9350b
         })
         .style("stroke", "white")
         .style("stroke-width", 1.5)
