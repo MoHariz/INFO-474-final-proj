@@ -73,6 +73,7 @@
     [data name:"sportsData" source:"genre_Sports1.csv"/]
     [data name:"strategyData" source:"genre_Strategy1.csv"/]
     [data name:"VNData" source:"genre_Visual-Novel1.csv"/]
+    [data name:"country" source:"world_countries.json"/]
     // [data name:"population" source:"world_population.csv"/]
     
     [Conditional if:`genreName === "Action-Adventure"`]
@@ -328,7 +329,7 @@
 
   // step 12
   [Step]
-    [Map/]
+    [Map country:data0 genre:"Shooter"/]
   [/Step]
 
 [/Scroller]

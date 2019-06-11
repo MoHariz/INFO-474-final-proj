@@ -5,7 +5,7 @@ const d3 = require("d3");
 class BarChart extends D3Component {
   initialize(node, props) {
     // node is a <div> container,
-    console.log(props.data);
+    // console.log(props.data);
     var margin = {
       top: 20,
       right: 20,

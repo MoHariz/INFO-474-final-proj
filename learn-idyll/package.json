@@ -15,6 +15,7 @@
     "idyll": "^4.3.2",
     "idyll-d3-component": "^2.0.0",
     "react-minimal-pie-chart": "^4.2.0",
+    "topojson": "^3.0.2",
     "waypoint": "^0.2.8"
   },
   "devDependencies": {

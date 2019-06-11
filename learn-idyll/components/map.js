@@ -1,27 +1,88 @@
 const D3Component = require("idyll-d3-component");
 const d3 = require("d3");
 const queue = require("d3-queue");
-
+const d3tip = require("d3-tip");
+const topojson = require("topojson");
+const NA_REGION = ["USA", "CAN", "MEX"];
+const EU_REGION = [
+  "ALB",
+  "AND",
+  "AUT",
+  "BLR",
+  "BEL",
+  "BIH",
+  "BGR",
+  "HRV",
+  "CYP",
+  "CZE",
+  "DNK",
+  "EST",
+  "FRO",
+  "FIN",
+  "FRA",
+  "DEU",
+  "GIB",
+  "GRC",
+  "HUN",
+  "ISL",
+  "IRL",
+  "IMN",
+  "ITA",
+  "XKX",
+  "LVA",
+  "LIE",
+  "LTU",
+  "LUX",
+  "MKD",
+  "MLT",
+  "MDA",
+  "MCO",
+  "MNE",
+  "NLD",
+  "NOR",
+  "POL",
+  "PRT",
+  "ROU",
+  "RUS",
+  "SMR",
+  "SRB",
+  "SVK",
+  "SVN",
+  "ESP",
+  "SWE",
+  "CHE",
+  "UKR",
+  "GBR",
+  "VAT"
+];
 class Map extends D3Component {
   initialize(node, props) {
     var format = d3.format(",");
-    console.log(props.population);
-    debugger;
+    let salesData;
+    console.log("ASDASD");
+    for (let i = 0; i < props.country.length; i++) {
+      if (props.country[i].Genre == props.genre) {
+        salesData = props.country[i];
+      }
+    }
+
+    // debugger;
     // Set tooltips
-    // var tip = d3
-    //   .tip()
-    //   .attr("class", "d3-tip")
-    //   .offset([-10, 0])
-    //   .html(function(d) {
-    //     return (
-    //       "<strong>Country: </strong><span class='details'>" +
-    //       d.properties.name +
-    //       "<br></span>" +
-    //       "<strong>Population: </strong><span class='details'>" +
-    //       format(d.population) +
-    //       "</span>"
-    //     );
-    //   });
+    var tip = d3tip()
+      .attr("class", "d3-tip")
+      .offset([-10, 0])
+      .html(function(d) {
+        console.log(d);
+        // debugger;
+        return (
+          "<strong>Region Name: </strong><span class='details'>" +
+          d.region +
+          "<br></span>" +
+          "<strong>Total Sales: </strong><span class='details'>" +
+          format(d.sales) +
+          "million copies</span>"
+        );
+      });
 
     var margin = { top: 0, right: 0, bottom: 0, left: 0 },
       width = 960 - margin.left - margin.right,
@@ -30,14 +91,15 @@ class Map extends D3Component {
     var color = d3
       .scaleThreshold()
       .domain([
-        10000,
         100000,
         500000,
         1000000,
+        1200000,
+        1500000,
+        2000000,
+        3000000,
+        4000000,
         5000000,
-        10000000,
-        50000000,
-        100000000,
         500000000,
         1500000000
       ])
@@ -70,6 +132,7 @@ class Map extends D3Component {
       .translate([width / 2, height / 1.5]);
 
     var path = d3.geoPath().projection(projection);
+    svg.call(tip);
 
     // d3.tsv("../data/world_population.tsv").then(data => {
     //   debugger;
@@ -92,21 +155,54 @@ class Map extends D3Component {
         d3.json,
         "https://gist.githubusercontent.com/jeremycflin/b43ab253f3ae02dced07/raw/8e7e38b28c247610939427008451ec18463d2b8e/world_countries.json"
       )
-      .defer(
-        d3.tsv,
-        "https://gist.githubusercontent.com/jeremycflin/b43ab253f3ae02dced07/raw/8e7e38b28c247610939427008451ec18463d2b8e/world_population.tsv"
-      )
+      //   .defer(
+      //     d3.tsv,
+      //     "https://gist.githubusercontent.com/jeremycflin/b43ab253f3ae02dced07/raw/8e7e38b28c247610939427008451ec18463d2b8e/world_population.tsv"
+      //   )
       .await(ready);
-    function ready(error, data, population) {
-      var populationById = {};
-
-      population.forEach(function(d) {
-        populationById[d.id] = +d.population;
-      });
+    function ready(error, data) {
+      //   var salesByRegion = { USA: 310232863 };
+      //   var populationById = {};
+      var salesByRegion = {};
       data.features.forEach(function(d) {
-        d.population = populationById[d.id];
+        if (NA_REGION.includes(d.id)) {
+          salesByRegion[d.id] = salesData.total_NA_sales;
+          d.sales = salesData.total_NA_sales;
+          d.region = "NA";
+        } else if (EU_REGION.includes(d.id)) {
+          salesByRegion[d.id] = salesData.total_EU_sales;
+          d.sales = salesData.total_EU_sales;
+          d.region = "EU";
+        } else if (d.id === "JPN") {
+          salesByRegion.JPN = salesData.total_JP_sales;
+          d.sales = salesData.total_JP_sales;
+          d.region = "JPN";
+        }
       });
+      debugger;
+      //   for (let i = 0; i < NA_REGION.length; i++) {
+      //     salesByRegion[NA_REGION[i]] = salesData.total_NA_sales;
+      //     data.features[NA_REGION[i]] = salesData.total_NA_sales;
+      //   }
+      //   for (let i = 0; i < EU_REGION.length; i++) {
+      //     salesByRegion[EU_REGION[i]] = salesData.total_EU_sales;
+      //     data.features[EU_REGION[i]] = salesData.total_EU_sales;
+      //   }
 
+      //   salesByRegion.JPN = salesData.total_JP_sales;
+      //   data.features.JPN = salesData.total_JP_sales;
+      //   debugger;
+
+      //   population.forEach(function(d) {
+      //     populationById[d.id] = +d.population;
+      //   });
+      //   data.features.forEach(function(d) {
+      //     d.population = populationById[d.id];
+      //   });
+      //   debugger;
+      //   console.log(props.country);
+
+      //   debugger;
       svg
         .append("g")
         .attr("class", "countries")
@@ -116,30 +212,44 @@ class Map extends D3Component {
         .append("path")
         .attr("d", path)
         .style("fill", function(d) {
-          return color(populationById[d.id]);
+          //   console.log(d.id);
+          //   debugger;
+          if (!isNaN(salesByRegion[d.id])) {
+            if (NA_REGION.includes(d.id)) {
+              return "rgb(8,48,107)";
+            } else if (EU_REGION.includes(d.id)) {
+              return "rgb(158,202,225)";
+            } else if (d.id === "JPN") {
+              return "rgb(255,192,203)";
+            }
+          } else {
+            return "rgba(255,255,255,0)";
+          }
         })
         .style("stroke", "white")
         .style("stroke-width", 1.5)
         .style("opacity", 0.8)
         // tooltips
         .style("stroke", "white")
-        .style("stroke-width", 0.3);
-      // .on("mouseover", function(d) {
-      //   tip.show(d);
+        .style("stroke-width", 0.3)
+        .on("mouseover", function(d) {
+          if (!isNaN(salesByRegion[d.id])) {
+            tip.show(d, this);
 
-      //   d3.select(this)
-      //     .style("opacity", 1)
-      //     .style("stroke", "white")
-      //     .style("stroke-width", 3);
-      // })
-      // .on("mouseout", function(d) {
-      //   tip.hide(d);
+            d3.select(this)
+              .style("opacity", 1)
+              .style("stroke", "white")
+              .style("stroke-width", 3);
+          }
+        })
+        .on("mouseout", function(d) {
+          tip.hide(d);
 
-      //   d3.select(this)
-      //     .style("opacity", 0.8)
-      //     .style("stroke", "white")
-      //     .style("stroke-width", 0.3);
-      // });
+          d3.select(this)
+            .style("opacity", 0.8)
+            .style("stroke", "white")
+            .style("stroke-width", 0.3);
+        });
 
       svg
         .append("path")
