@@ -29,7 +29,8 @@ class BoxPlot extends D3Component {
 
     // console.log(sortedData);
 
-    const median = d3.median(sortedData);
+    let median = d3.median(sortedData);
+    median = Math.round(median * 100) / 100;
     // console.log(median);
 
     let firstQuartile = d3.quantile(sortedData, 0.25);
