@@ -329,8 +329,8 @@
   [/Step]
 
   // step 12
-  [Step]
-  include dropdowns and text for map here
+  [Step className:"noBorder"]
+    [Map/]
   [/Step]
 
 [/Scroller]
