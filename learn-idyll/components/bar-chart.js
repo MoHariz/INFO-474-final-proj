@@ -37,6 +37,8 @@ class BarChart extends D3Component {
 
     var yAxis = d3.axisLeft(y);
 
+    var tooltip = d3.select(node).append("div").attr("class", "toolTip");
+
     x.domain([
       0,
       d3.max(props.data, function(d) {
@@ -82,7 +84,15 @@ class BarChart extends D3Component {
       })
       .attr("width", function(d) {
         return x(d.total_NA_sales);
-      });
+      })
+      .on("mousemove", function(d){
+        tooltip
+          .style("left", d3.event.pageX - 50 + "px")
+          .style("top", d3.event.pageY - 70 + "px")
+          .style("display", "contents")
+          .html("<p><strong>Genre:</strong> " + (d.Genre) + "<br><strong>Total sales in North America:</strong> "+ (d.total_NA_sales) + " millions</p>");
+      })
+      .on("mouseout", function(d){ tooltip.style("display", "contents");});
   }
 
   update(props) {

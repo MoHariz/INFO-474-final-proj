@@ -328,8 +328,8 @@
   [/Step]
 
   // step 12
-  [Step]
-    [Map country:data0 genre:"Shooter"/]
+  [Step className:"noBorder"]
+    [Map/]
   [/Step]
 
 [/Scroller]

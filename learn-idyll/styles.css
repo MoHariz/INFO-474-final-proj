@@ -23,6 +23,11 @@
   padding-top: 0;
 }
 
+.noBorder {
+  border-style: none !important;
+  box-shadow: none !important;
+}
+
 .article-header {
   margin: 0;
 }
@@ -55,7 +60,6 @@ section {
   fill: brown;
 }
 
-/* #idyll-mount > div > div > div > section:nth-child(2) */
 
 .label {
   fill: black;
@@ -66,6 +70,7 @@ section {
   color: green;
   font-weight: bold;
 }
+<<<<<<< HEAD
 .names {
   fill: none;
   stroke: #fff;
@@ -137,3 +142,16 @@ section {
 .details {
   color: white;
 }
+=======
+
+.toolTip {
+  position: absolute;
+  display: contents;
+  min-width: 80px;
+  height: auto;
+  background: none repeat scroll 0 0 #ffffff;
+  border: 1px solid #6F257F;
+  padding: 14px;
+  text-align: left;
+}
+>>>>>>> e39ada7a1e1ec173466d54aa43101cfabef9f7e4
