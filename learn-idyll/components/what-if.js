@@ -9,6 +9,7 @@ class WhatIf extends React.PureComponent {
     }
     let sortedData = data.sort((a, b) => a - b);
     let median = d3.median(sortedData);
+    median = Math.round(median * 100) / 100;
     let maxAbsolute = d3.max(sortedData);
 
     return (
